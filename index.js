@@ -1,27 +1,38 @@
-
-// let userName = prompt("Ваше имя? " "");
-do{
-     userName = prompt("Ваше имя? ", "");
-}
-while (userName === "" || userName === null || userName === Number(userName) ) ; 
-
+// let userName = prompt("Ваше имя? ", "");
 // let userLastName = prompt("Ваша фамилия?", "");
-do{
-     userLastName = prompt("Ваша фамилия?", "");
-}
-while (userLastName === "" || userLastName === null || userLastName === Number(userLastName ));
-
 // let userLastLastName = prompt("Ваше отчество?", "");
-do{
-     userLastLastName = prompt("Ваше отчество?", "");
-}
-while (userLastLastName === "" || userLastLastName === null || userLastLastName === Number(userLastLastName)) ;
 
-// let userAge = prompt("Ваш возраст в годах?", "");
+let userName = "";
+let userLastName = "";
+let userLastLastName = ""; 
+let userAge;
+
+
+
+switch (userName, userLastName, userLastLastName){
+    case "":
+        alert("Введите ваше ФИО!");
+        do{
+            userName = prompt("Ваше имя? ", "");
+       }
+       while (userName === "" || userName === null || +userName === Number(userName) ) ; 
+    
+       do{
+        userLastName = prompt("Ваша фамилия?", "");
+   }
+       while (userLastName === "" || userLastName === null || +userLastName === Number(userLastName) );
+       do{
+       userLastLastName = prompt("Ваше отчество?", "");
+   }
+       while (userLastLastName === "" || userLastLastName === null || +userLastLastName === Number(userLastLastName) ) ;
+break;
+default:
+    alert ("Неправильное значение!");
+}
 do{
     userAge  = prompt("Ваш возраст в годах?", "");
 }
-while (userAge === "" || userAge === null || userAge === String(userAge) ) ;
+while (userAge === "" || userAge === null || isNaN(userAge) ) ;
 
 let userAgeDay = userAge * 365; 
 let userAgeFiveEars = userAge + 5;
